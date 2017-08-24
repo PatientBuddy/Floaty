@@ -17,13 +17,13 @@ public enum FloatyItemLabelPositionType {
  Floating Action Button Object's item.
  */
 open class FloatyItem: UIView {
-
+    
     // MARK: - Properties
-
+    
     /**
      This object's button size.
      */
-    open var size: CGFloat = 42 {
+    open var size: CGFloat = 50 {
         didSet {
             self.frame = CGRect(x: 0, y: 0, width: size, height: size)
             titleLabel.frame.origin.y = self.frame.height/2-titleLabel.frame.size.height/2
@@ -31,12 +31,12 @@ open class FloatyItem: UIView {
             self.setNeedsDisplay()
         }
     }
-
+    
     /**
      Button color.
      */
     open var buttonColor: UIColor = UIColor.white
-
+    
     /**
      Title label color.
      */
@@ -45,45 +45,45 @@ open class FloatyItem: UIView {
             titleLabel.textColor = titleColor
         }
     }
-
+    
     /**
      Enable/disable shadow.
      */
     open var hasShadow: Bool = true
-
+    
     /**
      Circle Shadow color.
      */
     open var circleShadowColor: UIColor = UIColor.black
-
+    
     /**
      Title Shadow color.
      */
     open var titleShadowColor: UIColor = UIColor.black
-
+    
     /**
      If you touch up inside button, it execute handler.
      */
     open var handler: ((FloatyItem) -> Void)? = nil
-
+    
     open var imageOffset: CGPoint = CGPoint.zero
-    open var imageSize: CGSize = CGSize(width: 25, height: 25) {
+    open var imageSize: CGSize = CGSize(width: 50, height: 50) {
         didSet {
             _iconImageView?.frame = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
             _iconImageView?.center = CGPoint(x: size/2, y: size/2) + imageOffset
         }
     }
-
+    
     /**
      Reference to parent
      */
     open weak var actionButton: Floaty?
-
+    
     /**
      Shape layer of button.
      */
     fileprivate var circleLayer: CAShapeLayer = CAShapeLayer()
-
+    
     /**
      If you keeping touch inside button, button overlaid with tint layer.
      */
@@ -94,7 +94,7 @@ open class FloatyItem: UIView {
      deafult is left
      */
     open var titleLabelPosition: FloatyItemLabelPositionType = .left
-
+    
     /**
      Item's title label.
      */
@@ -109,7 +109,7 @@ open class FloatyItem: UIView {
             return _titleLabel!
         }
     }
-
+    
     /**
      Item's title.
      */
@@ -126,7 +126,7 @@ open class FloatyItem: UIView {
             titleLabel.frame.origin.y = self.size/2-titleLabel.frame.size.height/2
         }
     }
-
+    
     /**
      Item's icon image view.
      */
@@ -142,7 +142,7 @@ open class FloatyItem: UIView {
             return _iconImageView!
         }
     }
-
+    
     /**
      Item's icon.
      */
@@ -162,16 +162,16 @@ open class FloatyItem: UIView {
             _iconImageView?.image = image
         }
     }
-
+    
     /**
-      itemBackgroundColor change
-    */
+     itemBackgroundColor change
+     */
     public var itemBackgroundColor: UIColor? = nil {
-      didSet { circleLayer.backgroundColor = itemBackgroundColor?.cgColor }
+        didSet { circleLayer.backgroundColor = itemBackgroundColor?.cgColor }
     }
-
+    
     // MARK: - Initialize
-
+    
     /**
      Initialize with default property.
      */
@@ -179,22 +179,22 @@ open class FloatyItem: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
         backgroundColor = UIColor.clear
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     /**
      Set size, frame and draw layers.
      */
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-
+        
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
         createCircleLayer()
         setShadow()
-
+        
         if _titleLabel != nil {
             bringSubview(toFront: _titleLabel!)
         }
@@ -202,7 +202,7 @@ open class FloatyItem: UIView {
             bringSubview(toFront: _iconImageView!)
         }
     }
-
+    
     fileprivate func createCircleLayer() {
         //        circleLayer.frame = CGRectMake(frame.size.width - size, 0, size, size)
         let castParent : Floaty = superview as! Floaty
@@ -211,7 +211,7 @@ open class FloatyItem: UIView {
         circleLayer.cornerRadius = size/2
         layer.addSublayer(circleLayer)
     }
-
+    
     fileprivate func createTintLayer() {
         //        tintLayer.frame = CGRectMake(frame.size.width - size, 0, size, size)
         let castParent : Floaty = superview as! Floaty
@@ -220,7 +220,7 @@ open class FloatyItem: UIView {
         tintLayer.cornerRadius = size/2
         layer.addSublayer(tintLayer)
     }
-
+    
     fileprivate func setShadow() {
         if !hasShadow {
             return
@@ -229,13 +229,13 @@ open class FloatyItem: UIView {
         circleLayer.shadowRadius = 2
         circleLayer.shadowColor = circleShadowColor.cgColor
         circleLayer.shadowOpacity = 0.4
-
+        
         titleLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
         titleLabel.layer.shadowRadius = 2
         titleLabel.layer.shadowColor = titleShadowColor.cgColor
         titleLabel.layer.shadowOpacity = 0.4
     }
-
+    
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.count == 1 {
             let touch = touches.first
@@ -245,7 +245,7 @@ open class FloatyItem: UIView {
             }
         }
     }
-
+    
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.count == 1 {
             let touch = touches.first
@@ -255,7 +255,7 @@ open class FloatyItem: UIView {
             }
         }
     }
-
+    
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         tintLayer.removeFromSuperlayer()
         if touches.count == 1 {
