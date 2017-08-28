@@ -862,7 +862,7 @@ extension Floaty {
      */
     fileprivate func popAnimationWithOpen(group: DispatchGroup) {
         var itemHeight: CGFloat = 0
-        var delay = 0.0
+        let delay = 0.1
         for item in items {
             if item.isHidden == true { continue }
             itemHeight += item.size + itemSpace
@@ -891,13 +891,11 @@ extension Floaty {
             }, completion: { _ in
                 group.leave()
             })
-            
-            delay += animationSpeed
         }
     }
     
     fileprivate func popAnimationWithClose(group: DispatchGroup) {
-        var delay = 0.0
+        let delay = 0.1
         for item in items.reversed() {
             if item.isHidden == true { continue }
             group.enter()
@@ -907,7 +905,6 @@ extension Floaty {
             }, completion: { _ in
                 group.leave()
             })
-            delay += animationSpeed
         }
     }
     
