@@ -14,7 +14,7 @@
 		84762CB41ECB4B98007C4ABD /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84762CAD1ECB4B98007C4ABD /* FloatyManager.swift */; };
 		84762CB51ECB4B98007C4ABD /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84762CAE1ECB4B98007C4ABD /* FloatyViewController.swift */; };
 		84762CB61ECB4B98007C4ABD /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84762CAF1ECB4B98007C4ABD /* FloatyWindow.swift */; };
-		8CBA2AFD1F55AE850051AACF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA2AFC1F55AE850051AACF /* Utils.swift */; };
+		8CBA2AFF1F55B07C0051AACF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA2AFE1F55B07C0051AACF /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		84762CAD1ECB4B98007C4ABD /* FloatyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyManager.swift; path = Sources/FloatyManager.swift; sourceTree = SOURCE_ROOT; };
 		84762CAE1ECB4B98007C4ABD /* FloatyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = Sources/FloatyViewController.swift; sourceTree = SOURCE_ROOT; };
 		84762CAF1ECB4B98007C4ABD /* FloatyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyWindow.swift; path = Sources/FloatyWindow.swift; sourceTree = SOURCE_ROOT; };
-		8CBA2AFC1F55AE850051AACF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8CBA2AFE1F55B07C0051AACF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/Utils.swift; sourceTree = "<group>"; };
 		B65A2E531D5975130045483D /* Floaty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Floaty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65A2E6C1D5975610045483D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supports/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -67,7 +67,7 @@
 				84762CAD1ECB4B98007C4ABD /* FloatyManager.swift */,
 				84762CAE1ECB4B98007C4ABD /* FloatyViewController.swift */,
 				84762CAF1ECB4B98007C4ABD /* FloatyWindow.swift */,
-				8CBA2AFC1F55AE850051AACF /* Utils.swift */,
+				8CBA2AFE1F55B07C0051AACF /* Utils.swift */,
 				B65A2E6C1D5975610045483D /* Info.plist */,
 			);
 			name = Floaty;
@@ -155,10 +155,10 @@
 				84762CB61ECB4B98007C4ABD /* FloatyWindow.swift in Sources */,
 				84762CB41ECB4B98007C4ABD /* FloatyManager.swift in Sources */,
 				84762CB11ECB4B98007C4ABD /* Floaty.swift in Sources */,
-				8CBA2AFD1F55AE850051AACF /* Utils.swift in Sources */,
 				84762CB21ECB4B98007C4ABD /* FloatyDelegate.swift in Sources */,
 				84762CB51ECB4B98007C4ABD /* FloatyViewController.swift in Sources */,
 				84762CB31ECB4B98007C4ABD /* FloatyItem.swift in Sources */,
+				8CBA2AFF1F55B07C0051AACF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
