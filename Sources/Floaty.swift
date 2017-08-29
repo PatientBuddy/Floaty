@@ -99,7 +99,7 @@ open class Floaty: UIView {
     /**
      Child item's default size.
      */
-    @IBInspectable open var itemSize: CGFloat = 56 {
+    @IBInspectable open var itemSize: CGFloat = Utils.itemSize() {
         didSet {
             self.items.forEach { item in
                 item.size = self.itemSize
