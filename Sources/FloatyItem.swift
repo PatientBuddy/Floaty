@@ -67,7 +67,7 @@ open class FloatyItem: UIView {
     open var handler: ((FloatyItem) -> Void)? = nil
     
     open var imageOffset: CGPoint = CGPoint.zero
-    open var imageSize: CGSize = CGSize(width: 65, height: 65) {
+    open var imageSize: CGSize = CGSize(width: Utils.itemSize(), height: Utils.itemSize()) {
         didSet {
             _iconImageView?.frame = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
             _iconImageView?.center = CGPoint(x: size/2, y: size/2) + imageOffset

@@ -32,7 +32,7 @@ open class Floaty: UIView {
     /**
      This object's button size.
      */
-    open var size: CGFloat = 56 {
+    open var size: CGFloat = Utils.itemSize() {
         didSet {
             self.setNeedsDisplay()
             self.recalculateItemsOrigin()
@@ -1109,5 +1109,9 @@ extension UIView {
 extension UIDevice {
     var isIPhoneInLandscape: Bool {
         return UIDevice.current.userInterfaceIdiom == .phone && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight)
+    }
+    
+    var isIPhone4: Bool {
+        return UIScreen.main.nativeBounds.height == 960
     }
 }
