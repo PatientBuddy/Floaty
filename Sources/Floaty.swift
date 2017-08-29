@@ -89,7 +89,7 @@ open class Floaty: UIView {
     /**
      Background overlaying color.
      */
-    @IBInspectable open var overlayColor: UIColor = UIColor.black.withAlphaComponent(0.3)
+    @IBInspectable open var overlayColor: UIColor = UIColor.black.withAlphaComponent(0.1)
     
     /**
      The space between the item and item.
@@ -99,7 +99,7 @@ open class Floaty: UIView {
     /**
      Child item's default size.
      */
-    @IBInspectable open var itemSize: CGFloat = 42 {
+    @IBInspectable open var itemSize: CGFloat = 56 {
         didSet {
             self.items.forEach { item in
                 item.size = self.itemSize

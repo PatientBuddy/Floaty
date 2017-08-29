@@ -23,7 +23,7 @@ open class FloatyItem: UIView {
     /**
      This object's button size.
      */
-    open var size: CGFloat = 50 {
+    open var size: CGFloat = 65 {
         didSet {
             self.frame = CGRect(x: 0, y: 0, width: size, height: size)
             titleLabel.frame.origin.y = self.frame.height/2-titleLabel.frame.size.height/2
@@ -67,7 +67,7 @@ open class FloatyItem: UIView {
     open var handler: ((FloatyItem) -> Void)? = nil
     
     open var imageOffset: CGPoint = CGPoint.zero
-    open var imageSize: CGSize = CGSize(width: 50, height: 50) {
+    open var imageSize: CGSize = CGSize(width: 65, height: 65) {
         didSet {
             _iconImageView?.frame = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
             _iconImageView?.center = CGPoint(x: size/2, y: size/2) + imageOffset
@@ -104,6 +104,7 @@ open class FloatyItem: UIView {
             if _titleLabel == nil {
                 _titleLabel = UILabel()
                 _titleLabel?.textColor = titleColor
+                _titleLabel?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
                 addSubview(_titleLabel!)
             }
             return _titleLabel!
