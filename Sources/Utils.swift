@@ -10,6 +10,6 @@ import Foundation
 
 class Utils {
     static func itemSize() -> CGFloat {
-        return UIDevice.current.isIPhone4 ? 45 : 65
+        return UIDevice.current.isIPhone4 ? 45 : 55
     }
 }
